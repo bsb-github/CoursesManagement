@@ -1,3 +1,5 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -118,8 +120,7 @@ class _SignUpViewState extends State<SignUpView> {
                 onTap: () {
                   if (_formKey.currentState!.validate()) {
                     EasyLoading.show();
-                    final _signUp = Account();
-                    _signUp.signup(
+                    signup(
                         name: _nameController.text,
                         email: _emailController.text,
                         password: _passwordController.text,
@@ -158,5 +159,56 @@ class _SignUpViewState extends State<SignUpView> {
         ),
       ),
     );
+  }
+
+  Future<void> signup({
+    required String name,
+    required String email,
+    required String password,
+    required BuildContext context,
+  }) async {
+    await createAccount(email: email, password: password);
+    await storeUserData(name: name, email: email, password: password);
+    EasyLoading.showSuccess("Show Can login Now");
+    EasyLoading.dismiss();
+    FirebaseAuth.instance.signOut();
+    Navigator.pop(context);
+  }
+
+  Future<void> createAccount({
+    required String email,
+    required String password,
+  }) async {
+    try {
+      await FirebaseAuth.instance
+          .createUserWithEmailAndPassword(email: email, password: password);
+    } on FirebaseAuthException catch (e) {
+      EasyLoading.showError(e.code);
+      EasyLoading.dismiss();
+      print(e.code);
+    }
+  }
+
+  Future<void> storeUserData({
+    required String name,
+    required String email,
+    required String password,
+  }) async {
+    try {
+      await FirebaseFirestore.instance
+          .collection("users")
+          .doc(FirebaseAuth.instance.currentUser!.uid)
+          .set({
+        "name": name,
+        "email": email,
+        "profile_image":
+            "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png",
+      });
+      await FirebaseAuth.instance.signOut();
+    } on FirebaseException catch (e) {
+      EasyLoading.showError(e.code);
+      EasyLoading.dismiss();
+      print(e.code);
+    }
   }
 }

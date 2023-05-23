@@ -18,9 +18,6 @@ class Account {
   }) async {
     createAccount(email: email, password: password);
     await storeUserData(name: name, email: email, password: password);
-
-    EasyLoading.showSuccess("Success");
-    EasyLoading.dismiss();
     Navigator.pop(context);
   }
 
@@ -31,8 +28,8 @@ class Account {
     try {
       await FirebaseAuth.instance
           .signInWithEmailAndPassword(email: email, password: password)
-          .then((value) {
-        getUserData();
+          .then((value) async {
+        await getUserData();
         EasyLoading.dismiss();
         Navigator.push(
             context,

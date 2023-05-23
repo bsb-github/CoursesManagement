@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:lms/model/category_model.dart';
 import 'package:lms/model/course_model.dart';
+import 'package:lms/views/AdminViews/AddQuizToCourse.dart';
 import 'package:lms/views/AdminViews/ShowCourses.dart';
 
 class AddQuizView extends StatefulWidget {
@@ -56,8 +57,8 @@ class _AddQuizViewState extends State<AddQuizView> {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => ShowCourses(
-                          course: CategoryList.categoryList[index],
+                      builder: (context) => AddQuizToCourse(
+                          category: CategoryList.categoryList[index],
                           courses: courses),
                     ));
               },

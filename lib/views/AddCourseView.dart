@@ -176,11 +176,11 @@ class _AddCourseViewState extends State<AddCourseView> {
                                     courseThumbnail: thumbnailUrl)
                                 .then((value) {
                               EasyLoading.showSuccess("Course Added");
-                              // _descriptionContoller.clear();
-                              // _linkController.clear();
-                              // _titleController.clear();
-                              // thumbnailUrl = "";
-                              // categoryName = "";
+                              _descriptionContoller.clear();
+                              _linkController.clear();
+                              _titleController.clear();
+                              thumbnailUrl = "";
+                              categoryName = "";
                               setState(() {});
                             });
                           }

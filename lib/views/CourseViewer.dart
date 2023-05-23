@@ -3,6 +3,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:lms/model/course_model.dart';
+import 'package:lms/views/TakeQuiz.dart';
 import 'package:nanoid/nanoid.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
@@ -157,7 +158,14 @@ class _CourseViewerState extends State<CourseViewer> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       CustomButton(
-                        onTap: () {},
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) =>
+                                    TakeQuiz(course: widget.course),
+                              ));
+                        },
                         bgColor: Color(0xff6cd077),
                         buttonText: "Take A Quiz",
                       ),
@@ -169,8 +177,9 @@ class _CourseViewerState extends State<CourseViewer> {
                           var id = nanoid(20);
                           FirebaseFirestore.instance
                               .collection("favourites")
-                              .doc(FirebaseAuth.instance.currentUser!.uid)
-                              .collection("1")
+                              .doc("v1")
+                              .collection(
+                                  FirebaseAuth.instance.currentUser!.uid)
                               .doc(id)
                               .set({"id": id, "courseid": widget.course.id});
                         },

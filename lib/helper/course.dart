@@ -26,12 +26,43 @@ class Course {
     await getSCourses();
     await getWCourses();
     CourseList.courses.clear();
-    CourseList.courses.add(CourseList.arcrylicCourse[0]);
-    CourseList.courses.add(CourseList.goucheCourses[0]);
-    CourseList.courses.add(CourseList.hardBoardCraftCourses[0]);
-    CourseList.courses.add(CourseList.sculptureCourse[0]);
-    CourseList.courses.add(CourseList.paperCourses[0]);
-    CourseList.courses.add(CourseList.wetPaintCourses[0]);
+    if (CourseList.goucheCourses.length == 0) {
+      CourseList.courses.add(CourseList.arcrylicCourse[0]);
+      CourseList.courses.add(CourseList.hardBoardCraftCourses[0]);
+      CourseList.courses.add(CourseList.sculptureCourse[0]);
+      CourseList.courses.add(CourseList.paperCourses[0]);
+      CourseList.courses.add(CourseList.wetPaintCourses[0]);
+    } else if (CourseList.arcrylicCourse.length == 0) {
+      CourseList.courses.add(CourseList.goucheCourses[0]);
+      CourseList.courses.add(CourseList.hardBoardCraftCourses[0]);
+      CourseList.courses.add(CourseList.sculptureCourse[0]);
+      CourseList.courses.add(CourseList.paperCourses[0]);
+      CourseList.courses.add(CourseList.wetPaintCourses[0]);
+    } else if (CourseList.hardBoardCraftCourses.length == 0) {
+      CourseList.courses.add(CourseList.arcrylicCourse[0]);
+      CourseList.courses.add(CourseList.goucheCourses[0]);
+      CourseList.courses.add(CourseList.sculptureCourse[0]);
+      CourseList.courses.add(CourseList.paperCourses[0]);
+      CourseList.courses.add(CourseList.wetPaintCourses[0]);
+    } else if (CourseList.paperCourses.length == 0) {
+      CourseList.courses.add(CourseList.arcrylicCourse[0]);
+      CourseList.courses.add(CourseList.goucheCourses[0]);
+      CourseList.courses.add(CourseList.hardBoardCraftCourses[0]);
+      CourseList.courses.add(CourseList.sculptureCourse[0]);
+      CourseList.courses.add(CourseList.wetPaintCourses[0]);
+    } else if (CourseList.sculptureCourse.length == 0) {
+      CourseList.courses.add(CourseList.arcrylicCourse[0]);
+      CourseList.courses.add(CourseList.goucheCourses[0]);
+      CourseList.courses.add(CourseList.hardBoardCraftCourses[0]);
+      CourseList.courses.add(CourseList.paperCourses[0]);
+      CourseList.courses.add(CourseList.wetPaintCourses[0]);
+    } else {
+      CourseList.courses.add(CourseList.arcrylicCourse[0]);
+      CourseList.courses.add(CourseList.goucheCourses[0]);
+      CourseList.courses.add(CourseList.hardBoardCraftCourses[0]);
+      CourseList.courses.add(CourseList.sculptureCourse[0]);
+      CourseList.courses.add(CourseList.paperCourses[0]);
+    }
   }
 
   Future<void> getACourses() async {

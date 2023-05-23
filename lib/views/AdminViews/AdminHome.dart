@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:lms/model/course_model.dart';
 import 'package:lms/views/AddCourseView.dart';
 import 'package:lms/views/AdminViews/AddQuiz.dart';
 import 'package:lms/views/AdminViews/DeleteCourse.dart';
 
 import '../../helper/course.dart';
+import '../../model/category_model.dart';
 import '../ArtWorks.dart';
 
 class AdminHome extends StatefulWidget {
@@ -15,7 +17,7 @@ class AdminHome extends StatefulWidget {
 }
 
 class _AdminHomeState extends State<AdminHome> {
-  bool Loading = true;
+  bool Loading = false;
   @override
   void initState() {
     // TODO: implement initState
@@ -25,6 +27,14 @@ class _AdminHomeState extends State<AdminHome> {
 
   getCourse() async {
     Course courseClass = Course();
+    CategoryList.categoryList.clear();
+    CourseList.arcrylicCourse.clear();
+    CourseList.courses.clear();
+    CourseList.goucheCourses.clear();
+    CourseList.hardBoardCraftCourses.clear();
+    CourseList.paperCourses.clear();
+    CourseList.sculptureCourse.clear();
+    CourseList.wetPaintCourses.clear();
     await courseClass.getCategory();
     await courseClass.getAllCourses();
     setState(() {
