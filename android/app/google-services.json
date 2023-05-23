@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1009538391044",
+    "firebase_url": "https://cryptw-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "cryptw",
+    "storage_bucket": "cryptw.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1009538391044:android:00689799ed6364f6e2a951",
+        "android_client_info": {
+          "package_name": "com.example.lms"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1009538391044-kno7aji7ivsbaq168a902ckj69eu4le6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDpOhUdYBUSvOz6B9O5q21enNSJIaOw_8k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1009538391044-kno7aji7ivsbaq168a902ckj69eu4le6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

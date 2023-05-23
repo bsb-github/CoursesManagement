@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>1009538391044-gkbv39dt4o012nevaasec2d08g3avtd2.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.1009538391044-gkbv39dt4o012nevaasec2d08g3avtd2</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBC9A-G5hxrEX63yvt-glg9sbw7UjtloEg</string>
+	<key>GCM_SENDER_ID</key>
+	<string>1009538391044</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.lms</string>
+	<key>PROJECT_ID</key>
+	<string>cryptw</string>
+	<key>STORAGE_BUCKET</key>
+	<string>cryptw.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:1009538391044:ios:e8e28a73791c4faee2a951</string>
+	<key>DATABASE_URL</key>
+	<string>https://cryptw-default-rtdb.asia-southeast1.firebasedatabase.app</string>
+</dict>
+</plist>
